@@ -1,0 +1,27 @@
+@use './_variables.scss' as *;
+
+@mixin rounded-xl {
+  border-radius: $radius-xl;
+}
+
+@mixin rounded-2xl {
+  border-radius: $radius-2xl;
+}
+
+@mixin card {
+  border: $border;
+  @include rounded-xl;
+  box-shadow: $shadow;
+  background: $bg;
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba($brand-focus, .8);
+}
+
+@mixin appBg {
+  background: radial-gradient(1200px 600px at 20% 0%, #e6f3ff 0%, transparent 70%),
+    radial-gradient(1200px 600px at 80% 100%, #e9fef3 0%, transparent 70%),
+    #f6f7fb;
+}

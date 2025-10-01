@@ -1,0 +1,12 @@
+@use '../_variables.scss' as *;
+@use '../_mixins.scss' as *;
+
+.banner {
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+
+  &--error {
+    background: $error-bg;
+    color: $error-fg;
+  }
+}

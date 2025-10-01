@@ -1,0 +1,92 @@
+@use '../_variables.scss' as *;
+@use '../_mixins.scss' as *;
+
+.splash {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  @include appBg;
+  z-index: 9999;
+  animation: splash-fade 300ms ease 900ms forwards;
+}
+
+.splash__inner {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.splash__logo {
+  width: 128px;
+  height: 128px;
+  image-rendering: -webkit-optimize-contrast;
+  animation: logo-pop 900ms cubic-bezier(.2, .8, .2, 1) both;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .15));
+}
+
+.splash__title {
+  font-weight: 800;
+  letter-spacing: .08em;
+  font-size: .95rem;
+  color: #0f172a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  animation: title-fade 600ms ease 450ms both;
+}
+
+.splash__hint {
+  font-size: .75rem;
+  color: #64748b;
+  opacity: .8;
+  animation: title-fade 600ms ease 600ms both;
+}
+
+/* Keyframes */
+@keyframes logo-pop {
+  0% {
+    transform: scale(.6);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes title-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .splash,
+  .splash__logo,
+  .splash__title,
+  .splash__hint {
+    animation: none !important;
+  }
+}

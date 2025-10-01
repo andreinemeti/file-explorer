@@ -1,0 +1,28 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 400 #{$font-base}/1.5 system-ui,
+  -apple-system,
+  Segoe UI,
+  Roboto,
+  Ubuntu,
+  Cantarell,
+  "Helvetica Neue",
+  Arial,
+  "Apple Color Emoji",
+  "Segoe UI Emoji";
+  @include appBg;
+  color: $fg;
+}
