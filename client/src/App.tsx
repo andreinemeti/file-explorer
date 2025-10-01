@@ -137,6 +137,7 @@ async function showDirectory(dirPath: string, previewCurrentDir = false) {
             <div className="panel panel--loading">Loading…</div>
           ) : (
             <FileList
+              path={state.path}
               items={state.entries}
               onOpen={open}
               selectedIndex={state.selectedIndex}

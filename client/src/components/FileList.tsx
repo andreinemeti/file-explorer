@@ -8,6 +8,7 @@ type Props = {
   selectedIndex: number;
   setSelectedIndex: Dispatch<SetStateAction<number>>;
   onNavigateUp: () => void;
+  path: string;
 };
 
 export default function FileList(props: Props) {
@@ -89,8 +90,15 @@ export default function FileList(props: Props) {
     }
   }
 
+  const goUp = () => {
+    
+  }
   return (
     <div className="filelist">
+        {props.path !== '' && <button className="filelist__go-up-btn" type="button" title="Go up" aria-label="Go up"
+        onClick={() => props.onNavigateUp()}>&#8593; Up one level
+        </button>}
+
       {props.items.length > 0 ? (
         <div className="filelist__scroll-container" ref={scrollRef}>
           {props.items.map((e, i) => (

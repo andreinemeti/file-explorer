@@ -7,6 +7,16 @@
 
   @include card;
 
+  &__go-up-btn {
+    padding:5px 0 5px 15px;
+    font-weight:600;
+    font-size:.8rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    display:block;
+    width:100%;
+    text-align:left;
+  }
+
   &__scroll-container {
     height: calc(100vh - 250px);
     overflow: auto;
