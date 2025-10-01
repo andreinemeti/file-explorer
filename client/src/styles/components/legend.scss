@@ -1,0 +1,26 @@
+@use '../_variables.scss' as *;
+@use '../_mixins.scss' as *;
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  opacity: .85;
+
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
+
+  &__label {
+    opacity: .65;
+  }
+
+  &__dot {
+    opacity: .4;
+  }
+
+}

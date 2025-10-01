@@ -1,0 +1,43 @@
+@use '../_variables.scss' as *;
+@use '../_mixins.scss' as *;
+
+.breadcrumbs {
+  font-size: .875rem;
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 21px; //prevent flickering when / appears
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__sep {
+
+    opacity: .6;
+  }
+
+  &__btn {
+    text-decoration: underline;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__btn:focus {
+    @include focus-ring;
+  }
+
+  &__btn:hover {
+    text-decoration: none;
+  }
+}

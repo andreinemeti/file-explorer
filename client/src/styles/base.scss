@@ -1,0 +1,13 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
+a, button { cursor: pointer; }
+button { background: transparent; border: 0; }
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  border: $border;
+  border-radius: .375rem;
+  padding: .125rem .375rem;
+  font-size: .75rem;
+  background:$bg;
+}

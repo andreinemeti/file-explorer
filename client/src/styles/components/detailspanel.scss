@@ -1,0 +1,104 @@
+@use '../_variables.scss' as *;
+@use '../_mixins.scss' as *;
+
+.panel {
+    @include card;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+
+$label-w: 120px;
+$label-w-sm: 96px;
+
+.panel__titleRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.panel__title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    word-break: break-word;
+
+}
+
+.panel__grid {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.75rem;
+    row-gap: 0.25rem;
+
+    font-size: 0.9rem;
+    margin: 0;
+
+    >dt,
+    >dd {
+        margin: 0;
+    }
+}
+
+.panel__grid>dt {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: $label-w;
+    max-width: $label-w;
+    opacity: 0.7;
+}
+
+.panel__grid>dd {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(100% - #{$label-w} - 0.75rem);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.panel__thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.04);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 1px 3px rgba(0, 0, 0, .06);
+    font-size: 25px;
+    line-height: 1;
+}
+
+
+@media (max-width: 640px) {
+    .panel__grid>dt {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: $label-w-sm;
+        max-width: $label-w-sm;
+    }
+
+    .panel__grid>dd {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: calc(100% - #{$label-w-sm} - 0.75rem);
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .panel__grid>dt,
+    .panel__grid>dd {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 100%;
+        max-width: 100%;
+        white-space: normal;
+        text-overflow: clip;
+    }
+}
