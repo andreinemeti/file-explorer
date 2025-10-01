@@ -30,7 +30,7 @@
 ## Attribution & Learning Notes
 
 I’m new to **Node.js** and **TypeScript**, and this was my first time using them.  
-- All of the server side was generated with ChatGPT, as well as troubleshooting, and code reviews were produced with ChatGPT’s help.
+- All of the server side was generated with ChatGPT, as well as troubleshooting.
 
 - I created the project architecture, the design and the UX, integrated the generated code, adapted it to the requirements, and verified it locally. 
 After that I refactored all of the project because most of the generated code was hard to read/unreadable. 
