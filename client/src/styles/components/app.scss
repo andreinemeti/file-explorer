@@ -22,11 +22,9 @@
     user-select: none;
   }
 
-  &__logoBtn {
-    border-radius: .5rem;
-  }
 
-  &__logoBtn:focus-visible {
+
+  &__logo-btn:focus-visible {
     @include focus-ring;
   }
 
@@ -52,14 +50,14 @@
 
   }
 
-  &__listCol {
+  &__list-col {
     min-width: 0;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
   }
 
-  &__detailsCol {
+  &__details-col {
     width: $details-w;
     max-width:100%;
     flex-grow: 0;
