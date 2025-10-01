@@ -12,7 +12,7 @@ export default function DetailsPanel(props: Props ) {
 
   return (
     <div className="panel">
-      <div className="panel__titleRow">
+      <div className="panel__title-row">
         <span
           className="panel__thumb"
           role="img"
@@ -42,7 +42,7 @@ export default function DetailsPanel(props: Props ) {
           className={'panel__path'}
           title={props.entry.path || '/'}
         >
-          <span id="pathText" className="panel__pathText">{props.entry.path || '/'}</span>
+          <span id="pathText" className="panel__path-text">{props.entry.path || '/'}</span>
          
         </dd>
       </dl>

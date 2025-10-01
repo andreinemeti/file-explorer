@@ -6,7 +6,7 @@ import { getFiles, getFileDetails } from './lib/api';
 import type { FileSystemEntry } from './types';
 import KeyLegend from "./components/KeyLegend";
 import logo from "./assets/img/logo.png";
-import Splash from './components/Splash';
+import { SplashAnimation } from './components/SplashAnimation';
 
 type AppState = {
   path: string;
@@ -107,14 +107,14 @@ async function showDirectory(dirPath: string, previewCurrentDir = false) {
   }
   return (
     <div className="app">
-      {state.showSplash && <Splash onDone={hideSplashAnimation} />}
+      {state.showSplash && <SplashAnimation onDone={hideSplashAnimation} />}
 
       <div className="app__header">
         <button
           type="button"
           onClick={() => showDirectory("")}
           title="Go to root"
-          className="app__logoBtn"
+          className="app__logo-btn"
           aria-label="Go to root"
         >
           <img src={logo} alt="File Explorer logo" className="app__logo" draggable="false" />
@@ -132,7 +132,7 @@ async function showDirectory(dirPath: string, previewCurrentDir = false) {
       {state.error && <div className="banner banner--error">{state.error}</div>}
 
       <div className="app__main">
-        <div className="app__listCol">
+        <div className="app__list-col">
           {state.loading ? (
             <div className="panel panel--loading">Loading…</div>
           ) : (
@@ -145,7 +145,7 @@ async function showDirectory(dirPath: string, previewCurrentDir = false) {
             />
           )}
         </div>
-        <div className="app__detailsCol">
+        <div className="app__details-col">
           <DetailsPanel entry={state.selectedFileDetails} />
         </div>
       </div>
