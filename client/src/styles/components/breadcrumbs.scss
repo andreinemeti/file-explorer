@@ -12,7 +12,8 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    height: 21px; //prevent flickering when / appears
+    flex-wrap: wrap;
+    min-height: 21px; //prevent flickering  when breadcrumbs change
   }
 
   &__item {
