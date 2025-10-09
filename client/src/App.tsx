@@ -44,14 +44,15 @@ async function showDirectory(dirPath: string, previewCurrentDir = false) {
       selectedFileDetails: previewCurrentDir ? allFiles.current : null,
       selectedIndex: -1,
     }));
-  } catch (e: any) {
+  } catch (e: unknown) {
     setState(prev => ({
       ...prev,
       loading: false,
-      error: e?.message || 'Failed to load',
+      error:  typeof e === 'string' ? e : 'Failed to load'
     }));
   }
 }
+
 
   useEffect(() => {
     //root directory
