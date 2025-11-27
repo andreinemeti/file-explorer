@@ -8,6 +8,9 @@
 - **Server**: Navigate to the `server/` folder. Set `ROOT_DIR` in `.env` (absolute path). Run `npm i` and then  `npm run dev`. 
 - **Client**: Navigate to the `web/` folder. Run `npm i` and then  `npm run dev`. Open the Vite URL.
 
+## Setting up docker
+`docker compose up`
+
 
 ## Creating a build
 - **Server**: `npm run build` then `npm start`.
