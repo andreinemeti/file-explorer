@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  # =======================
+  # BACKEND / SERVER
+  # =======================
+  server:
+    image: node:18
+    # 👇 CHANGE this if the server code is not in "server"
+    #   - "server"    → /project-root/server
+    #   - "backend"   → /project-root/backend
+    #   - "."         → /project-root (when there's only a single Node app)
+    working_dir: /app/server
+
+    volumes:
+      # Mount the project into the container at /app
+      - .:/app
+
+    # 👇 CHANGE this if the project uses a different command
+    # Examples:
+    #   "npm run dev"
+    #   "npm start"
+    #   "yarn dev"
+    command: sh -c "npm install && npm run dev"
+
+    # 👇 CHANGE the left side if the app uses another port
+    #   (e.g. "4000:4000", "8080:8080", etc.)
+    ports:
+      - "3000:3000"
+
+    environment:
+      - NODE_ENV=development
+      # many backend frameworks already bind to 0.0.0.0, this is just extra-safe
+      - HOST=0.0.0.0
+
+  # =======================
+  # FRONTEND / CLIENT
+  # =======================
+  client:
+    image: node:18
+    # 👇 CHANGE this if the frontend code is not in "client"
+    #   - "client"     → /project-root/client
+    #   - "frontend"   → /project-root/frontend
+    #   - "web"        → /project-root/web
+    working_dir: /app/client
+
+    volumes:
+      - .:/app
+
+    # For Vite-style apps:
+    #   npm run dev -- --host 0.0.0.0 --port 5173
+    # For Create React App:
+    #   npm start
+    # For Next.js:
+    #   npm run dev
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+
+    # 👇 CHANGE if the frontend uses a different port (3000, 4200, etc.)
+    ports:
+      - "5173:5173"
+
+    environment:
+      - NODE_ENV=development
